@@ -2,6 +2,8 @@ ChemAP
 =============
 Chemical structure-based Drug Approval Prediction
 
+![model1](img/model_overview.png)
+
 Setup
 -------------
 First, clone this repository and move to the directory.
