@@ -24,7 +24,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_type', help="Data type", type=str, default='DrugApp')
     parser.add_argument('--data_path', help="processed dataset path", type=str, default='./dataset/processed_data')
-    parser.add_argument('--custom_file', help="user file", type=str, default='./dataset/example.csv')
+    parser.add_argument('--input_file', help="user file", type=str, default='example.csv')
     parser.add_argument('--output', help="output path", type=str, default='example')
     parser.add_argument('--model_path', help="trained model path", type=str, default='./model/ChemAP')
     parser.add_argument('--fp_dim_1', help='2D fragment predictor hidden dim 1', type=int, default=1024)
@@ -97,7 +97,7 @@ def main():
         df = pd.read_csv('./dataset/FDA/FDA_2023_approved.csv').dropna().reset_index(drop=True)
         test_dataset = External_Dataset(Smiles_vocab, df, 'FDA', device, trainset=train, similarity_cut=0.7)
     elif arg.data_type == 'custom':
-        df = pd.read_csv(arg.custom_file)
+        df = pd.read_csv(f'./dataset/{arg.input_file}')
         test_dataset = External_Dataset(Smiles_vocab, df, 'custom', device, trainset=None)
     test_loader  = DataLoader(test_dataset, batch_size=256, shuffle=False)
 
