@@ -1,0 +1,56 @@
+No.,Drug Name,Active Ingredient,Approval Date,FDA-approved use on approval date*,SMILES
+55.0,Wainua,eplontersen,12/21/2023,To treat polyneuropathy of hereditary transthyretin-mediated amyloidosis,
+54.0,Filsuvez,birch triterpenes,12/18/2023,To treat wounds associated with dystrophic and junctional epidermolysis bullosa,
+53.0,Fabhalta ,iptacopan,12/5/2023,To treat paroxysmal nocturnal hemoglobinuria,CCOC1CCN(C(C1)C2=CC=C(C=C2)C(=O)O)CC3=C(C=C(C4=C3C=CN4)C)OC.O.Cl
+52.0,Ogsiveo,nirogacestat,11/27/2023,To treat adults with progressing desmoid tumors who require systemic treatment,CCCC(C(=O)NC1=CN(C=N1)C(C)(C)CNCC(C)(C)C)NC2CCC3=C(C2)C(=CC(=C3)F)F
+51.0,Truqap,capivasertib,11/16/2023,To treat breast cancer that meets certain disease criteria,C1CN(CCC1(C(=O)NC(CCO)C2=CC=C(C=C2)Cl)N)C3=NC=NC4=C3C=CN4
+50.0,Ryzneuta,efbemalenograstim alfa-vuxw,11/16/2023,To treat neutropenia,
+49.0,Augtyro,repotrectinib,11/15/2023,To treat ROS1-positive non-small cell lung cancer,CC1CNC(=O)C2=C3N=C(C=CN3N=C2)NC(C4=C(O1)C=CC(=C4)F)C
+48.0,Defencath,"taurolidine, heparin",11/15/2023,To reduce the incidence of catheter-related bloodstream infections in adults with kidney failure receiving chronic hemodialysis through a central venous catheter,C1CS(=O)(=O)NCN1CN2CCS(=O)(=O)NC2
+47.0,Fruzaqla,fruquintinib,11/8/2023,"To treat refractory, metastatic colorectal cancer",CC1=C(C2=C(O1)C=C(C=C2)OC3=NC=NC4=CC(=C(C=C43)OC)OC)C(=O)NC
+46.0,Loqtorzi,toripalimab-tpzi,10/27/2023,To treat recurrent or metastatic nasopharyngeal carcinoma when used together with or following other therapies,
+45.0,Omvoh,mirikizumab-mrkz,10/26/2023,To treat ulcerative colitis,
+44.0,Agamree,vamorolone,10/26/2023,To treat Duchenne muscular dystrophy,CC1CC2C3CCC4=CC(=O)C=CC4(C3=CCC2(C1(C(=O)CO)O)C)C
+43.0,Bimzelx,bimekizumab,10/17/2023,To treat moderate to severe plaque psoriasis in adults who are candidates for systemic therapy or phototherapy,
+42.0,Zilbrysq,zilucoplan,10/17/2023,To treat generalized myasthenia gravis in adults who are anti-acetylcholine receptor (AChR) antibody positive,
+41.0,Velsipity,etrasimod,10/12/2023,To treat moderately to severely active ulcerative colitis in adults,C1CCC(C1)C2=C(C=C(C=C2)COC3=CC4=C(C=C3)NC5=C4CCC5CC(=O)O)C(F)(F)F
+40.0,Rivfloza,nedosiran,9/29/2023,To lower urinary oxalate levels in patients 9 years and older with primary hyperoxaluria type 1 and relatively preserved kidney function,
+39.0,Pombiliti,cipaglucosidase alfa-atga,9/28/2023,To treat late-onset Pompe disease,
+38.0,Exxua,gepirone,9/22/2023,To treat major depressive disorder,CC1(CC(=O)N(C(=O)C1)CCCCN2CCN(CC2)C3=NC=CC=N3)C.Cl
+37.0,Ojjaara,momelotinib,9/15/2023,To treat intermediate or high-risk myelofibrosis in adults with anemia,C1COCCN1C2=CC=C(C=C2)NC3=NC=CC(=N3)C4=CC=C(C=C4)C(=O)NCC#N
+36.0,Aphexda,motixafortide,9/8/2023,To use with filgrastim (G-CSF) to mobilize hematopoietic stem cells to the peripheral blood for collection and subsequent autologous transplantation in patients with multiple myeloma,
+35.0,Veopoz,pozelimab-bbfg,8/18/2023,"To treat patients 1 year old and older with CD55-deficient protein-losing enteropathy (PLE), also known as CHAPLE disease",
+34.0,Sohonos,palovarotene,8/16/2023,To reduce the volume of new heterotopic ossification in adults and pediatric patients (aged 8 years and older for females and 10 years and older for males) with fibrodysplasia ossificans progressiva,CC1(CCC(C2=C1C=C(C(=C2)C=CC3=CC=C(C=C3)C(=O)O)CN4C=CC=N4)(C)C)C
+33.0,Elrexfio,elranatamab-bcmm,8/14/2023,To treat adults with relapsed or refractory multiple myeloma who have received at least four prior lines of therapy,
+32.0,Talvey,talquetamab-tgvs,8/9/2023,To treat adults with relapsed or refractory multiple myeloma who have received at least four prior therapies,
+31.0,Izervay,avacincaptad pegol,8/4/2023,To treat geographic atrophy secondary to age-related macular degeneration,
+30.0,Zurzuvae,zuranolone,8/4/2023,To treat postpartum depression Press Release,CC1(CCC2C(C1)CCC3C2CCC4(C3CCC4C(=O)CN5C=C(C=N5)C#N)C)O
+29.0,Xdemvy,lotilaner,7/25/2023,To treat Demodex blepharitis,
+28.0,Vanflyta,quizartinib,7/20/2023,To use as part of a treatment regimen for newly diagnosed acute myeloid leukemia that meets certain criteria,CC(C)(C)C1=CC(=NO1)NC(=O)NC2=CC=C(C=C2)C3=CN4C5=C(C=C(C=C5)OCCN6CCOCC6)SC4=N3
+27.0,Beyfortus,nirsevimab-alip,7/17/2023,To prevent respiratory syncytial virus (RSV) lower respiratory tract diseasePress Release,
+26.0,Ngenla,somatrogon-ghla,6/27/2023,To treat growth failure due to inadequate secretion of endogenous growth hormone,
+25.0,Rystiggo,rozanolixizumab-noli,6/26/2023,To treat generalized myasthenia gravis in adults who are anti-acetylcholine receptor- or anti-muscle-specific tyrosine kinase antibody-positive,
+24.0,Litfulo,ritlecitinib,6/23/2023,To treat severely patchy hair loss,CC1CCC(CN1C(=O)C=C)NC2=NC=NC3=C2C=CN3
+23.0,Columvi,glofitamab-gxbm,6/15/2023,"To treat diffuse large B-cell lymphoma, not otherwise specified, or large B-cell lymphoma arising from follicular lymphoma after two or more lines of systemic therapy",
+22.0,Inpefa,sotagliflozin,5/26/2023,​To treat heart failure ,CCOC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)SC)O)O)O)Cl
+21.0,Posluma,flotufolastat F 18,5/25/2023,To use with positron emission tomography imaging in certain patients with prostate cancer,CC(C)(C)[Si](C1=CC=C(C=C1)C(=O)NCC(C(=O)NC(CCCCNC(=O)CCC(=O)NCCCC(C(=O)O)NC(=O)CCC(C(=O)O)NC(=O)NC(CCC(=O)O)C(=O)O)C(=O)O)NC(=O)CCC(C(=O)O)N2CCN(CCN(CCN(CC2)CC(=O)[O-])CC(=O)[O-])CC(=O)[O-])(C(C)(C)C)F.[Ga+3]
+20.0,Paxlovid,"nirmatrelvir, ritonavir",5/25/2023,To treat mild-to-moderate COVID-19 in adults at high risk for progression to severe COVID-19Press Release,CC1(C2C1C(N(C2)C(=O)C(C(C)(C)C)NC(=O)C(F)(F)F)C(=O)NC(CC3CCNC3=O)C#N)C
+19.0,Xacduro,"sulbactam, durlobactam",5/23/2023,To treat hospital-acquired bacterial pneumonia and ventilator-associated bacterial pneumonia caused by susceptible isolates of Acinetobacter baumannii-calcoaceticus complexPress Release,
+18.0,Epkinly,epcoritamab-bysp,5/19/2023,To treat relapsed or refractory diffuse large B-cell lymphoma (not otherwise specified) and high-grade B-cell lymphoma after two or more lines of systemic therapy,
+17.0,Miebo,perfluorhexyloctane,5/18/2023,To treat signs and symptoms of dry eye disease,CCCCCCCCC(C(C(C(C(C(F)(F)F)(F)F)(F)F)(F)F)(F)F)(F)F
+16.0,Veozah,fezolinetant,5/12/2023,To treat moderate to severe hot flashes caused by menopausePress Release,CC1C2=NN=C(N2CCN1C(=O)C3=CC=C(C=C3)F)C4=NC(=NS4)C
+15.0,Elfabrio,pegunigalsidase alfa-iwxj,5/9/2023,To treat confirmed Fabry disease,
+14.0,Qalsody,tofersen,4/25/2023,To treat amyotrophic lateral sclerosis in adults who have a SOD1 gene mutation,
+13.0,Joenja,leniolisib,3/24/2023,To treat activated phosphoinositide 3-kinase delta syndrome,CCC(=O)N1CCC(C1)NC2=NC=NC3=C2CN(CC3)C4=CC(=C(N=C4)OC)C(F)(F)F
+12.0,Rezzayo,rezafungin,3/22/2023,To treat candidemia and invasive candidiasis,
+11.0,Zynyz,retifanlimab-dlwr,3/22/2023,To treat metastatic or recurrent locally advanced Merkel cell carcinoma,
+10.0,Daybue,trofinetide,3/10/2023,To treat Rett syndrome,CC1(CCCN1C(=O)CN)C(=O)NC(CCC(=O)O)C(=O)O
+9.0,Zavzpret,zavegepant,3/9/2023,To treat migraine,CC1=CC(=CC2=C1NN=C2)CC(C(=O)N3CCN(CC3)C4CCN(CC4)C)NC(=O)N5CCC(CC5)C6=CC7=CC=CC=C7NC6=O
+8.0,Skyclarys,omaveloxolone,2/28/2023,To treat Friedrich’s ataxia,CC1(CCC2(CCC3(C(C2C1)C(=O)C=C4C3(CCC5C4(C=C(C(=O)C5(C)C)C#N)C)C)C)NC(=O)C(C)(F)F)C
+7.0,Filspari,sparsentan,2/17/2023,To reduce proteinuria in adults with primary immunoglobulin A nephropathy at risk of rapid disease progression,CCCCC1=NC2(CCCC2)C(=O)N1CC3=CC(=C(C=C3)C4=CC=CC=C4S(=O)(=O)NC5=NOC(=C5C)C)COCC
+6.0,Lamzede,velmanase alfa-tycv,2/16/2023,To treat non-central nervous system manifestations of alpha-mannosidosis,
+5.0,Jesduvroq,daprodustat,2/1/2023,To treat anemia caused by chronic kidney disease for adults on dialysis for at least four monthsPress Release,C1CCC(CC1)N2C(=O)C(C(=O)N(C2=O)C3CCCCC3)C(=O)NCC(=O)O
+4.0,Orserdu,elacestrant ,1/27/2023,"To treat estrogen receptor-positive, human epidermal growth factor receptor 2-negative, ESR1-mutated, advanced or metastatic breast cancer with disease progression following at least one line of endocrine therapy",CCNCCC1=CC=C(C=C1)CN(CC)C2=C(C=CC(=C2)OC)C3CCC4=C(C3)C=CC(=C4)O
+3.0,Jaypirca,pirtobrutinib,1/27/2023,"To treat relapsed or refractory mantle cell lymphoma in adults who have had at least two lines of systemic therapy, including a BTK inhibitor ",CC(C(F)(F)F)N1C(=C(C(=N1)C2=CC=C(C=C2)CNC(=O)C3=C(C=CC(=C3)F)OC)C(=O)N)N
+2.0,Brenzavvy,bexagliflozin,1/20/2023,To improve glycemic control in adults with type 2 diabetes mellitus as an adjunct to diet and exercise,C1CC1OCCOC2=CC=C(C=C2)CC3=C(C=CC(=C3)C4C(C(C(C(O4)CO)O)O)O)Cl
+1.0,Leqembi,lecanemab-irmb,1/6/2023,To treat Alzheimer’s diseasePress Release,

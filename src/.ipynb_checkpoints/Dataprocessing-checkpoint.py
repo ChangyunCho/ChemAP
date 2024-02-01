@@ -13,38 +13,12 @@ from rdkit.Chem.rdmolops import GetAdjacencyMatrix
 from src.utils import *
 
 class DatasetSplit():
-    def __init__(self, datapath, data_name, split='random', smiles_augmentation=False):
-        data = datapath + "/" + data_name + ".csv"
-        self.data = pd.read_csv(data, sep=',')
-        self.augmentation = smiles_augmentation
+    def __init__(self, df, split='random'):
+        self.data = df
         self.split = split
         
-    def smiles_augmentation(self, train_df):
-        randomize_func = functools.partial(uc.randomize_smiles, random_type='restricted')
-        to_mol_func = uc.get_mol_func('restricted')
-        to_smiles_func = uc.get_smi_func('restricted')  
-        train_smiles = train_df['SMILES'].to_list()
-        randomized_smiles = list(map((lambda smi: to_smiles_func(randomize_func(Chem.MolFromSmiles(smi)))), train_smiles))
-        augmented = pd.concat([pd.DataFrame(randomized_smiles, columns=['SMILES']), train_df.iloc[:,1:]], axis=1).dropna()
-        train_total = pd.concat([train_df, augmented], axis=0).reset_index(drop=True)
-        return train_total
-        
-    def data_split(self):
-        if self.split == 'random':
-            indices = list(range(len(self.data)))
-            split1, split2 = int(np.floor(0.1 * len(self.data))), int(np.floor(0.2 * len(self.data)))
-            np.random.shuffle(indices)
-            train_idx, valid_idx, test_idx = indices[split2:], indices[split1:split2], indices[:split1]
-            
-            train = pd.DataFrame(np.asarray(self.data)[train_idx], columns = list(self.data.columns))
-            if self.augmentation is True:
-                train = self.smiles_augmentation(train)
-            valid = pd.DataFrame(np.asarray(self.data)[valid_idx], columns = list(self.data.columns))
-            test = pd.DataFrame(np.asarray(self.data)[test_idx], columns = list(self.data.columns))
-
-            return train, valid, test
-        
-        elif self.split == 'Drug':
+    def data_split(self):       
+        if self.split == 'Drug':
             drugs = self.data['SMILES'].unique()
             split1, split2 = int(np.floor(0.1 * len(drugs))), int(np.floor(0.2 * len(drugs)))
             np.random.shuffle(drugs)
@@ -53,12 +27,14 @@ class DatasetSplit():
             test  = pd.merge(pd.DataFrame(drugs[:split1], columns=['SMILES']), self.data, on='SMILES')
             return train, valid, test
         
-        elif self.split == 'time':
-            train = self.data[self.data['year'] <= 2018].reset_index(drop=True).drop(columns=['year', 'length'])
-            if self.augmentation is True:
-                train = self.smiles_augmentation(train)
-            valid = self.data[(self.data['year'] == 2019)].reset_index(drop=True).drop(columns=['year', 'length'])
-            test = self.data[(self.data['year'] > 2019)&(self.data['year']!=9999)].reset_index(drop=True).drop(columns=['year', 'length'])
+        elif self.split == 'random':
+            indices = list(range(len(self.data)))
+            split1, split2 = int(np.floor(0.1 * len(self.data))), int(np.floor(0.2 * len(self.data)))
+            np.random.shuffle(indices)
+            train_idx, valid_idx, test_idx = indices[split2:], indices[split1:split2], indices[:split1]
+            train = pd.DataFrame(np.asarray(self.data)[train_idx], columns = list(self.data.columns))
+            valid = pd.DataFrame(np.asarray(self.data)[valid_idx], columns = list(self.data.columns))
+            test = pd.DataFrame(np.asarray(self.data)[test_idx], columns = list(self.data.columns))
             return train, valid, test
 
 class Dataset(Dataset):
@@ -67,7 +43,7 @@ class Dataset(Dataset):
         self.model_type = model_type
         
         self.ecfp = np.array([self.smiles_to_fingerprint(smiles, nBits=nBits) for smiles in df['SMILES'].values])
-        if (self.model_type == 'ECFP_Student') or (self.model_type == 'ENSEMBLE') or (self.model_type == 'All'):
+        if (self.model_type == 'ECFP_Student') or (self.model_type == 'ChemAP') or (self.model_type == 'All'):
             self.ecfp_2048 = np.array([self.smiles_to_fingerprint(smiles, nBits=2048) for smiles in df['SMILES'].values])
         self.clin = df.iloc[:,2:34].to_numpy(dtype=np.float32)
         self.ptnt = df.iloc[:,34:46].to_numpy(dtype=np.float32)
@@ -80,7 +56,7 @@ class Dataset(Dataset):
         self.adj_dataset = []
         self.seq_len = seq_len
         
-        if (self.model_type == 'SMILES_Student') or (self.model_type == 'ENSEMBLE') or (self.model_type == 'All'):
+        if (self.model_type == 'SMILES_Student') or (self.model_type == 'ChemAP') or (self.model_type == 'All'):
             smiles_list = np.asarray(df['SMILES'])
             for i in smiles_list:
                 self.adj_dataset.append(i)
@@ -101,7 +77,7 @@ class Dataset(Dataset):
         if self.model_type == 'Teacher':
             return x, y
         
-        elif (self.model_type == 'SMILES_Student') or (self.model_type == 'ENSEMBLE') or (self.model_type == 'All'):
+        elif (self.model_type == 'SMILES_Student') or (self.model_type == 'ChemAP') or (self.model_type == 'All'):
             item = self.smiles_dataset[idx]
             input_token, input_adj_masking = self.CharToNum(item)
     
@@ -125,7 +101,7 @@ class Dataset(Dataset):
             
             if self.model_type == 'SMILES_Student':
                 return x, torch.tensor(smiles_bert_input).to(self.device), smiles_bert_adj_mat, torch.tensor(smiles_bert_adj_mask).to(self.device), y
-            elif self.model_type == 'ENSEMBLE':
+            elif self.model_type == 'ChemAP':
                 return torch.tensor(self.ecfp_2048[idx]).type(torch.float).to(self.device), torch.tensor(smiles_bert_input).to(self.device), smiles_bert_adj_mat, torch.tensor(smiles_bert_adj_mask).to(self.device), y
             elif self.model_type == 'All':
                 return x, torch.tensor(self.ecfp_2048[idx]).type(torch.float).to(self.device), torch.tensor(smiles_bert_input).to(self.device), smiles_bert_adj_mat, torch.tensor(smiles_bert_adj_mask).to(self.device), y
@@ -176,9 +152,8 @@ class Dataset(Dataset):
         return padded
     
 class External_Dataset(Dataset):
-    def __init__(self, vocab, seq_len, device, nBits=128, dataset='FDA', trainset=None, similarity_cut=0.7):
+    def __init__(self, vocab, df, dataset, device, trainset=None, similarity_cut=0.7):
         if dataset == 'FDA':
-            df = pd.read_csv('./dataset/FDA/FDA_2023_SMILES_disease_final.csv').dropna().reset_index(drop=True)
             if trainset is not None:
                 df['similarity'] = 0.0
                 for i in range(len(df)):
@@ -195,12 +170,12 @@ class External_Dataset(Dataset):
             
         self.vocab = vocab
         self.atom_vocab = ['C', 'O', 'n', 'c', 'F', 'N', 'S', 's', 'o', 'P', 'R', 'L', 'X', 'B', 'I', 'i', 'p', 'A']
-        self.seq_len = seq_len
+        self.seq_len = 256
         self.smiles_dataset = [self.replace_halogen(smiles) for smiles in df['SMILES'].values]
         self.adj_dataset = [smiles for smiles in df['SMILES'].values]
 
         self.smiles_list = np.asarray(df['SMILES'])
-        self.ecfp_2048 = np.array([self.smiles_to_fingerprint(smiles, nBits=nBits) for smiles in df['SMILES'].values])
+        self.ecfp_2048 = np.array([self.smiles_to_fingerprint(smiles, nBits=2048) for smiles in df['SMILES'].values])
 
         self.label = np.ones(len(df))
         

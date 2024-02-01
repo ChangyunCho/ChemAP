@@ -191,7 +191,7 @@ class SMILES_Student(nn.Module):
 class FP_Student(torch.nn.Module):
     def __init__(self, ecfp_dim, hd1, hd2, hd3, drop1=0.2, drop2=0.2):
         super(FP_Student, self).__init__()
-        self.ecfp_enc = nn.Sequential(
+        self.encoder_1 = nn.Sequential(
             nn.Dropout(drop1),
             nn.Linear(ecfp_dim, hd1),
             nn.BatchNorm1d(hd1),
@@ -203,7 +203,7 @@ class FP_Student(torch.nn.Module):
             nn.Linear(hd2, 32)
         )
         
-        self.projector = nn.Sequential(
+        self.encoder_2 = nn.Sequential(
             nn.Linear(32, hd3),
             nn.BatchNorm1d(hd3),
             nn.Dropout(drop2),
@@ -222,7 +222,7 @@ class FP_Student(torch.nn.Module):
         )
 
     def forward(self, x):
-        x = self.ecfp_enc(x)
-        emb = self.projector(x)
+        x = self.encoder_1(x)
+        emb = self.encoder_2(x)
         out = self.classifier(emb)
         return emb, out
