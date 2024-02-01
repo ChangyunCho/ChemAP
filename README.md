@@ -35,15 +35,22 @@ Example codes
 ChemAP is consist with two chemical structure-based predictors.
 Each predictor is trained individually, and the final drug approval prediction is made by soft-voting the drug approval probability of each model.
 
-## Training SMILES-based predictor
+## 1.Training SMILES-based predictor
 For training SMILES-based predictor, pre-trained ChemBERT [Github link](https://github.com/HyunSeobKim/CHEM-BERT) model is required. 
+
 First, download the pre-trained ChemBERT model using link [here](https://drive.google.com/file/d/1-8oAIwKowGy89w-ZjvCGSc1jsCWNS1Fw/view?usp=sharing).
+
 Second, save the pre-trained model in the following directory './model/ChemBERT/'
     
     python SMILES_predictor.py 
 
-## Training 2D fragment-based predictor
+## 2.Training 2D fragment-based predictor
     python FP_predictor.py 
+    
+## 3.Predict drug approval with ChemAP 
+Before predicting drug approval, previous two predictors should be trained.
+
+    python ChemAP.py --data_type DrugApp
 
 Usage for 2023 FDA approved drug list
 -------------
