@@ -52,10 +52,8 @@ Before predicting drug approval, previous two predictors should be trained.
 
     python ChemAP.py --data_type DrugApp
 
-Usage for 2023 FDA approved drug list
--------------
+# Usage for 2023 FDA approved drug list
     python ChemAP.py --data_type FDA
 
-Usage for user provided drug list
--------------
+# Usage for user provided drug list
     python ChemAP.py --data_type custom --input_file example.csv --output example
