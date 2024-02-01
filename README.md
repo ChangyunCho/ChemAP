@@ -26,10 +26,10 @@ Example codes
 -------------
 
 # Usage for data processing
-    python data_processing.py --data_path ./dataset --save_path ./dataset/processed_data --split Drug --seed 7
+    python data_processing.py --data_path ./dataset --save_path ./dataset/processed_data --split Drug 
 
 # Training multi-modal Teacher model
-    python Teacher.py --seed 7
+    python Teacher.py 
 
 # Training ChemAP
 ChemAP is consist with two chemical structure-based predictors.
@@ -40,15 +40,15 @@ For training SMILES-based predictor, pre-trained ChemBERT [Github link](https://
 First, download the pre-trained ChemBERT model using link [here](https://drive.google.com/file/d/1-8oAIwKowGy89w-ZjvCGSc1jsCWNS1Fw/view?usp=sharing).
 Second, save the pre-trained model in the following directory './model/ChemBERT/'
     
-    python SMILES_predictor.py --seed 7
+    python SMILES_predictor.py 
 
 ## Training 2D fragment-based predictor
-    python FP_predictor.py --seed 7
+    python FP_predictor.py 
 
 Usage for 2023 FDA approved drug list
 -------------
-    python ChemAP.py --data_type FDA --seed 7
+    python ChemAP.py --data_type FDA
 
 Usage for user provided drug list
 -------------
-    python ChemAP.py --data_type custom --input_file example.csv --output example --seed 7
+    python ChemAP.py --data_type custom --input_file example.csv --output example
