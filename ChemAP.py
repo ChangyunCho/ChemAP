@@ -41,8 +41,8 @@ def main():
     
     if arg.data_type == 'DrugApp':
         print('Predict drug approval with DrugApp dataset')
-    elif arg.data_type == 'FDA':
-        print('Predict drug approval with 2023 FDA approved list')
+    elif arg.data_type == 'External':
+        print('Predict drug approval with external dataset')
     elif arg.data_type == 'custom':
         print('Predict drug approvl with custom drug list')
     else:
@@ -60,10 +60,10 @@ def main():
         
     os.makedirs(perform_save_dir, exist_ok=True)
 
-    if arg.data_type == 'FDA':
-        f = open(f'{perform_save_dir}/FDA_2023_preds_statistic.csv', 'w', newline='')
+    if arg.data_type == 'External':
+        f = open(f'{perform_save_dir}/External_pred_statistics.csv', 'w', newline='')
         wr = csv.writer(f)
-        wr.writerow(['model seed', 'FDA drug number', 'ChemAP pred'])
+        wr.writerow(['model seed', 'External dataset drug number', 'ChemAP pred'])
         f.close()
 
     # FP model arguments
@@ -91,11 +91,12 @@ def main():
         test = pd.read_csv(f'{arg.data_path}/test/DrugApp_seed_{arg.seed}_test_minmax.csv')
         test_dataset = Dataset(test, device, model_type='ChemAP', vocab=Smiles_vocab, seq_len=256)
 
-    elif arg.data_type == 'FDA':
+    elif arg.data_type == 'External':
         # trainset load to remove drugs with high similarity
         train = pd.read_csv(f'{arg.data_path}/train/DrugApp_seed_{arg.seed}_train_minmax.csv')
-        df = pd.read_csv('./dataset/FDA/FDA_2023_approved.csv').dropna().reset_index(drop=True)
-        test_dataset = External_Dataset(Smiles_vocab, df, 'FDA', device, trainset=train, similarity_cut=0.7)
+        df = pd.read_csv(f'{arg.data_path}/External/External.csv').dropna().reset_index(drop=True)
+        test_dataset = External_Dataset(Smiles_vocab, df, 'External', device, trainset=train, similarity_cut=0.7)
+        
     elif arg.data_type == 'custom':
         df = pd.read_csv(f'./dataset/{arg.input_file}')
         test_dataset = External_Dataset(Smiles_vocab, df, 'custom', device, trainset=None)
@@ -186,19 +187,21 @@ def main():
         
         print('ChemAP model performance saved')
 
-    elif arg.data_type == 'FDA':
-        f = open(f'{perform_save_dir}/FDA_2023_preds_statistic.csv', 'a', newline='')
+    elif arg.data_type == 'External':
+        f = open(f'{perform_save_dir}/External_pred_statistics.csv', 'a', newline='')
         wr = csv.writer(f)
         wr.writerow([arg.seed, test_dataset.__len__(), sum(ens_pred)])
         f.close()
         dataset = test_dataset.GetDataset()
         dataset['ChemAP_pred']=ens_pred
-        dataset.to_csv(f'{perform_save_dir}/FDA_2023_preds.csv', sep=',', index=None)
+        dataset.to_csv(f'{perform_save_dir}/External_prediction.csv', sep=',', index=None)
+        print('ChemAP model predictions saved for external dataset')
     
     elif arg.data_type == 'custom':
         dataset = test_dataset.GetDataset()
         dataset['ChemAP_pred']=ens_pred
-        dataset.to_csv(f'{perform_save_dir}/{arg.output}.csv', sep=',', index=None)
+        dataset.to_csv(f'{perform_save_dir}/{arg.output}_prediction.csv', sep=',', index=None)
+        print('ChemAP model predictions saved for custom dataset')
 
 if __name__ == "__main__":
     main()

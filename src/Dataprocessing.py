@@ -153,7 +153,8 @@ class Dataset(Dataset):
     
 class External_Dataset(Dataset):
     def __init__(self, vocab, df, dataset, device, trainset=None, similarity_cut=0.7):
-        if dataset == 'FDA':
+        if dataset == 'External':
+            ### Process of removing drugs with structures similar to drugs in the training dataset for rigorous evaluation
             if trainset is not None:
                 df['similarity'] = 0.0
                 for i in range(len(df)):
