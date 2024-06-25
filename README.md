@@ -60,7 +60,7 @@ Before predicting drug approval, previous two predictors should be trained.
 
     python ChemAP.py --data_type DrugApp
 
-# Inference for external dataset
+# Inference on external dataset
     python ChemAP.py --data_type FDA
 
 # Usage for user provided drug list
