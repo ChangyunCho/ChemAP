@@ -30,14 +30,14 @@ ChemAP training and evaluation were tested for the following python packages and
 Example codes
 -------------
 
-# Usage for data processing (benchmark dataset)
+# Usage for benchmark dataset processing
     python data_processing.py --data_path ./dataset --save_path ./dataset/processed_data --split Drug 
     
-# Usage for data processing (External dataset)
+# Usage for external dataset processing
     python data_processing.py --data_path ./dataset --save_path ./dataset/processed_data --split Drug 
 
 # Training multi-modal Teacher model
-    python Teacher.py 
+    python Teacher_train.py 
 
 # Training ChemAP
 ChemAP is consist with two chemical structure-based predictors.
@@ -50,17 +50,17 @@ First, download the pre-trained ChemBERT model using link [here](https://drive.g
 
 Second, save the pre-trained model in the following directory './model/ChemBERT/'
     
-    python SMILES_predictor.py 
+    python SMILES_predictor_train.py 
 
 ## 2.Training 2D fragment-based predictor
-    python FP_predictor.py 
+    python FP_predictor_train.py 
     
 ## 3.Predict drug approval with ChemAP 
 Before predicting drug approval, previous two predictors should be trained.
 
     python ChemAP.py --data_type DrugApp
 
-# Usage for 2023 FDA approved drug list
+# Inference for external dataset
     python ChemAP.py --data_type FDA
 
 # Usage for user provided drug list
