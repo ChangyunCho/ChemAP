@@ -49,10 +49,13 @@ For training SMILES-based predictor, pre-trained ChemBERT [Github link](https://
 First, download the pre-trained ChemBERT model using link [here](https://drive.google.com/file/d/1-8oAIwKowGy89w-ZjvCGSc1jsCWNS1Fw/view?usp=sharing).
 
 Second, save the pre-trained model in the following directory './model/ChemBERT/'
+
+Weights for each pre-trained student model in ChemAP can be downloaded through: link [here](https://drive.google.com/drive/folders/1hiHYnaUobdM8LiWDqrW4P0wMPDuK3hUh?usp=sharing).
     
     python SMILES_predictor_train.py 
 
 ### 3.Training 2D fragment-based predictor
+
     python FP_predictor_train.py 
     
 ### 3.Predict drug approval with ChemAP 
