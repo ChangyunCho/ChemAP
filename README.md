@@ -1,8 +1,13 @@
-ChemAP
+ChemAP (Chemical structure-based Drug Approval Prediction)
 =============
-Chemical structure-based Drug Approval Prediction
+
+Overview of ChemAP
 
 ![model1](img/model_overview.png)
+
+Model architecture of ChemAP
+
+![model2](img/model_architecture.png)
 
 Setup
 -------------
@@ -25,7 +30,10 @@ ChemAP training and evaluation were tested for the following python packages and
 Example codes
 -------------
 
-# Usage for data processing
+# Usage for data processing (benchmark dataset)
+    python data_processing.py --data_path ./dataset --save_path ./dataset/processed_data --split Drug 
+    
+# Usage for data processing (External dataset)
     python data_processing.py --data_path ./dataset --save_path ./dataset/processed_data --split Drug 
 
 # Training multi-modal Teacher model
