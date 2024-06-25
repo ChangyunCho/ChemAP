@@ -52,7 +52,8 @@ Second, save the pre-trained model in the following directory './model/ChemBERT/
 
 (Optional)
 Each pre-trained student model in ChemAP can be downloaded using link [here](https://drive.google.com/drive/folders/1hiHYnaUobdM8LiWDqrW4P0wMPDuK3hUh?usp=sharing).
-The downloaded ECFP model should be saved in the './model/ChemAP/ECFP_predictor' directory and the SMILES model must be saved in the './model/ChemAP/SMILES_predictor' directory.
+
+The downloaded ECFP model should be saved in the './model/ChemAP/ECFP_predictor' directory and the SMILES model should be saved in the './model/ChemAP/SMILES_predictor' directory.
     
     python SMILES_predictor_train.py 
 
