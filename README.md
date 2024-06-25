@@ -3,7 +3,7 @@ ChemAP (Chemical structure-based Drug Approval Prediction)
 
 Overview of ChemAP
 
-![model1](img/model_overview.png)
+![model1](img/ChemAP_overview.png)
 
 Model architecture of ChemAP
 
