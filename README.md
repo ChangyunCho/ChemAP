@@ -50,7 +50,7 @@ First, download the pre-trained ChemBERT model using link [here](https://drive.g
 
 Second, save the pre-trained model in the following directory './model/ChemBERT/'
 
-Weights for each pre-trained student model in ChemAP can be downloaded through: link [here](https://drive.google.com/drive/folders/1hiHYnaUobdM8LiWDqrW4P0wMPDuK3hUh?usp=sharing).
+Each pre-trained student model in ChemAP can be downloaded using link [here](https://drive.google.com/drive/folders/1hiHYnaUobdM8LiWDqrW4P0wMPDuK3hUh?usp=sharing).
     
     python SMILES_predictor_train.py 
 
