@@ -1,0 +1,13 @@
+study,status,phase,Name,SMILES,withdrawal,reason
+NCT05780541,Terminated,3,Lufotrelvir,CC(C)CC(C(=O)NC(CC1CCNC1=O)C(=O)COP(=O)(O)O)NC(=O)C2=CC3=C(N2)C=CC=C3OC,1,adverse event
+NCT04947579,Terminated,2,Gamcemetinib,CCOCC1=CN=C(N=C1OC2=NC3=C(C=C2)C4=C(C=C3)SC5=C4NCC(NC5=O)C)Cl,1,lack of efficacy
+NCT04115059,Terminated,1,Dasatinib,CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO,1,lack of efficacy
+NCT03768505,Terminated,2,Zandelisib,CC(C)(CC1=CC=CC=C1C2CCN(CC2)C)NC3=NC(=NC(=N3)N4CCOCC4)N5C6=CC=CC=C6N=C5C(F)F,1,adverse event
+NCT03601507,Terminated,2,Alpelisib,CC1=C(SC(=N1)NC(=O)N2CCCC2C(=O)N)C3=CC(=NC=C3)C(C)(C)C(F)(F)F,1,adverse event
+NCT03428945,Terminated,2,Hydroxychloroquine,CCN(CCCC(C)NC1=C2C=CC(=CC2=NC=C1)Cl)CCO,1,lack of efficacy
+NCT03132155,Terminated,2,AMG 337,CC(C1=NN=C2N1C=C(C=C2F)C3=CN(N=C3)C)N4C=CC5=C(C4=O)C=C(C=N5)OCCOC,1,lack of efficacy
+NCT03062540,Terminated,3,Cyclobenzaprine Hydrochloride,CN(C)CCC=C1C2=CC=CC=C2C=CC3=CC=CC=C31.Cl,1,lack of efficacy
+NCT02975349,Terminated,2,Evobrutinib,C=CC(=O)N1CCC(CC1)CNC2=NC=NC(=C2C3=CC=C(C=C3)OC4=CC=CC=C4)N,1,lack of efficacy
+NCT01251965,Terminated,2,Ruxolitinib,C1CCC(C1)C(CC#N)N2C=C(C=N2)C3=C4C=CNC4=NC=N3,1,lack of efficacy
+NCT05676697,TERMINATED,1,Linperlisib,CC(C)(C1CCN(CC1)CC2=C3C(=CC(=C2)F)C(=NC(=N3)N4CCOCC4)C5=CC(=C(N=C5)OC)NS(=O)(=O)C)O,1,lack of efficacy
+NCT02841540,TERMINATED,1,H3B-8800,CC1C=CC(C(CCC(CC(=O)OC1C(=CC=CC(C)C2=CC=CC=N2)C)O)(C)O)OC(=O)N3CCN(CC3)C,1,lack of efficacy
